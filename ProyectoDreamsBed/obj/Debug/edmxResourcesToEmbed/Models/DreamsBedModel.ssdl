@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DreamsBedModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="CODIGOCATEGORIA" />
+    </Key>
+    <Property Name="CODIGOCATEGORIA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NOMBRECATEGORIA" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPRA">
+    <Key>
+      <PropertyRef Name="CODIGOCOMPRA" />
+    </Key>
+    <Property Name="CODIGOCOMPRA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CODIGOUSUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FXCOMPRA" Type="date" Nullable="false" />
+    <Property Name="IPCOMPRA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CODIGOTARJETA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CODIGOFACTURACION" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLECOMPRA">
+    <Key>
+      <PropertyRef Name="CODIGODETALLECOMPRA" />
+      <PropertyRef Name="CODIGOCOMPRA" />
+    </Key>
+    <Property Name="CODIGODETALLECOMPRA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CODIGOCOMPRA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CODIGOPRODUCTO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CANTIDADPRODUCTO" Type="int" Nullable="false" />
+    <Property Name="PRECIOTOTALPRODUCTO" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIRECCION">
+    <Key>
+      <PropertyRef Name="CODIGODIRECCION" />
+    </Key>
+    <Property Name="CODIGODIRECCION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TIPOVIA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NOMBREVIA" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NUMEROPORTAL" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NUMEROPISO" Type="int" Nullable="false" />
+    <Property Name="LETRAPISO" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="OTROSPISO" Type="varchar" MaxLength="100" />
+    <Property Name="CODIGOPOSTAL" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FACTURACION">
+    <Key>
+      <PropertyRef Name="CODIGOFACTURACION" />
+    </Key>
+    <Property Name="CODIGOFACTURACION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TIPOVIA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NOMBREVIA" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NUMEROPORTAL" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NUMEROPISO" Type="int" Nullable="false" />
+    <Property Name="LETRAPISO" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="OTROSPISO" Type="varchar" MaxLength="100" />
+    <Property Name="CODIGOPOSTAL" Type="int" Nullable="false" />
+    <Property Name="NOMBREEMPRESA" Type="varchar" MaxLength="255" />
+    <Property Name="CIFEMPRESA" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="CODIGOPRODUCTO" />
+    </Key>
+    <Property Name="CODIGOPRODUCTO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NOMBREPRODUCTO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCRIPCIONPRODUCTO" Type="varchar" MaxLength="255" />
+    <Property Name="PRECIOPRODUCTO" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="STOCKPRODUCTO" Type="int" Nullable="false" />
+    <Property Name="COLORPRODUCTO" Type="varchar" MaxLength="100" />
+    <Property Name="ALTURAPRODUCTO" Type="int" />
+    <Property Name="LARGOPRODUCTO" Type="int" />
+    <Property Name="ANCHOPRODUCTO" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'C:\USERS\VTORREGA\SOURCE\REPOS\PROYECTODREAMSBED\PROYECTODREAMSBED\APP_DATA\DREAMSBED.MDF.dbo.PRODUCTOCATEGORIA' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="PRODUCTOCATEGORIA">
+          <Property Name="CODIGOPRODUCTO" Type="varchar" MaxLength="100" />
+          <Property Name="CODIGOCATEGORIA" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+  <EntityType Name="TARJETA">
+    <Key>
+      <PropertyRef Name="CODIGOTARJETA" />
+    </Key>
+    <Property Name="CODIGOTARJETA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NUMEROTARJETA" Type="int" Nullable="false" />
+    <Property Name="FXCADUCIDADTARJETA" Type="date" Nullable="false" />
+    <Property Name="CVCTARJETA" Type="int" Nullable="false" />
+    <Property Name="TIPOTARJETA" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="CODIGOUSUARIO" />
+    </Key>
+    <Property Name="CODIGOUSUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CORREOUSUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PASSWORDUSUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NOMBREUSUARIO" Type="varchar" MaxLength="100" />
+    <Property Name="APELLIDOSUSUARIO" Type="varchar" MaxLength="100" />
+    <Property Name="FXNACIMIENTO" Type="date" />
+    <Property Name="DNIUSUARIO" Type="varchar" MaxLength="10" />
+    <Property Name="CODIGOFACTURACION" Type="varchar" MaxLength="100" />
+    <Property Name="CODIGODIRECCION" Type="varchar" MaxLength="100" />
+    <Property Name="FOTOUSUARIO" Type="varchar" MaxLength="255" />
+    <Property Name="CODIGOTARJETA" Type="varchar" MaxLength="100" />
+    <Property Name="TELEFONOUSUARIO" Type="int" />
+  </EntityType>
+  <Association Name="FK__COMPRA__CODIGOFA__44FF419A">
+    <End Role="FACTURACION" Type="Self.FACTURACION" Multiplicity="1" />
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURACION">
+        <PropertyRef Name="CODIGOFACTURACION" />
+      </Principal>
+      <Dependent Role="COMPRA">
+        <PropertyRef Name="CODIGOFACTURACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__COMPRA__CODIGOTA__440B1D61">
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="1" />
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TARJETA">
+        <PropertyRef Name="CODIGOTARJETA" />
+      </Principal>
+      <Dependent Role="COMPRA">
+        <PropertyRef Name="CODIGOTARJETA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__COMPRA__CODIGOUS__4316F928">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="CODIGOUSUARIO" />
+      </Principal>
+      <Dependent Role="COMPRA">
+        <PropertyRef Name="CODIGOUSUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLECO__CODIG__4E88ABD4">
+    <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="1" />
+    <End Role="DETALLECOMPRA" Type="Self.DETALLECOMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPRA">
+        <PropertyRef Name="CODIGOCOMPRA" />
+      </Principal>
+      <Dependent Role="DETALLECOMPRA">
+        <PropertyRef Name="CODIGOCOMPRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLECO__CODIG__4F7CD00D">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLECOMPRA" Type="Self.DETALLECOMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="CODIGOPRODUCTO" />
+      </Principal>
+      <Dependent Role="DETALLECOMPRA">
+        <PropertyRef Name="CODIGOPRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'C:\USERS\VTORREGA\SOURCE\REPOS\PROYECTODREAMSBED\PROYECTODREAMSBED\APP_DATA\DREAMSBED.MDF.dbo.PRODUCTOCATEGORIA', pero no se encuentra la tabla.
+        <Association Name="FK__PRODUCTOC__CODIG__4AB81AF0" />-->
+  <!--Errores durante la generación:
+error 6004: Una relación hace referencia a la tabla 'C:\USERS\VTORREGA\SOURCE\REPOS\PROYECTODREAMSBED\PROYECTODREAMSBED\APP_DATA\DREAMSBED.MDF.dbo.PRODUCTOCATEGORIA', pero no se encuentra la tabla.
+        <Association Name="FK__PRODUCTOC__CODIG__4BAC3F29" />-->
+  <Association Name="FK__USUARIO__CODIGOD__3F466844">
+    <End Role="DIRECCION" Type="Self.DIRECCION" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIRECCION">
+        <PropertyRef Name="CODIGODIRECCION" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="CODIGODIRECCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USUARIO__CODIGOF__3E52440B">
+    <End Role="FACTURACION" Type="Self.FACTURACION" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURACION">
+        <PropertyRef Name="CODIGOFACTURACION" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="CODIGOFACTURACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USUARIO__CODIGOT__403A8C7D">
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TARJETA">
+        <PropertyRef Name="CODIGOTARJETA" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="CODIGOTARJETA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DreamsBedModelStoreContainer">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPRA" EntityType="Self.COMPRA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLECOMPRA" EntityType="Self.DETALLECOMPRA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIRECCION" EntityType="Self.DIRECCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURACION" EntityType="Self.FACTURACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TARJETA" EntityType="Self.TARJETA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__COMPRA__CODIGOFA__44FF419A" Association="Self.FK__COMPRA__CODIGOFA__44FF419A">
+      <End Role="FACTURACION" EntitySet="FACTURACION" />
+      <End Role="COMPRA" EntitySet="COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__COMPRA__CODIGOTA__440B1D61" Association="Self.FK__COMPRA__CODIGOTA__440B1D61">
+      <End Role="TARJETA" EntitySet="TARJETA" />
+      <End Role="COMPRA" EntitySet="COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__COMPRA__CODIGOUS__4316F928" Association="Self.FK__COMPRA__CODIGOUS__4316F928">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="COMPRA" EntitySet="COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLECO__CODIG__4E88ABD4" Association="Self.FK__DETALLECO__CODIG__4E88ABD4">
+      <End Role="COMPRA" EntitySet="COMPRA" />
+      <End Role="DETALLECOMPRA" EntitySet="DETALLECOMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLECO__CODIG__4F7CD00D" Association="Self.FK__DETALLECO__CODIG__4F7CD00D">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLECOMPRA" EntitySet="DETALLECOMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USUARIO__CODIGOD__3F466844" Association="Self.FK__USUARIO__CODIGOD__3F466844">
+      <End Role="DIRECCION" EntitySet="DIRECCION" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USUARIO__CODIGOF__3E52440B" Association="Self.FK__USUARIO__CODIGOF__3E52440B">
+      <End Role="FACTURACION" EntitySet="FACTURACION" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USUARIO__CODIGOT__403A8C7D" Association="Self.FK__USUARIO__CODIGOT__403A8C7D">
+      <End Role="TARJETA" EntitySet="TARJETA" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

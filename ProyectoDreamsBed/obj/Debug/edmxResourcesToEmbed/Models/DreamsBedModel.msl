@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DreamsBedModelStoreContainer" CdmEntityContainer="DreamsBedEntidades">
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="DreamsBedModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="CODIGOCATEGORIA" ColumnName="CODIGOCATEGORIA" />
+          <ScalarProperty Name="NOMBRECATEGORIA" ColumnName="NOMBRECATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPRA">
+      <EntityTypeMapping TypeName="DreamsBedModel.COMPRA">
+        <MappingFragment StoreEntitySet="COMPRA">
+          <ScalarProperty Name="CODIGOCOMPRA" ColumnName="CODIGOCOMPRA" />
+          <ScalarProperty Name="CODIGOUSUARIO" ColumnName="CODIGOUSUARIO" />
+          <ScalarProperty Name="FXCOMPRA" ColumnName="FXCOMPRA" />
+          <ScalarProperty Name="IPCOMPRA" ColumnName="IPCOMPRA" />
+          <ScalarProperty Name="CODIGOTARJETA" ColumnName="CODIGOTARJETA" />
+          <ScalarProperty Name="CODIGOFACTURACION" ColumnName="CODIGOFACTURACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLECOMPRA">
+      <EntityTypeMapping TypeName="DreamsBedModel.DETALLECOMPRA">
+        <MappingFragment StoreEntitySet="DETALLECOMPRA">
+          <ScalarProperty Name="CODIGODETALLECOMPRA" ColumnName="CODIGODETALLECOMPRA" />
+          <ScalarProperty Name="CODIGOCOMPRA" ColumnName="CODIGOCOMPRA" />
+          <ScalarProperty Name="CODIGOPRODUCTO" ColumnName="CODIGOPRODUCTO" />
+          <ScalarProperty Name="CANTIDADPRODUCTO" ColumnName="CANTIDADPRODUCTO" />
+          <ScalarProperty Name="PRECIOTOTALPRODUCTO" ColumnName="PRECIOTOTALPRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIRECCION">
+      <EntityTypeMapping TypeName="DreamsBedModel.DIRECCION">
+        <MappingFragment StoreEntitySet="DIRECCION">
+          <ScalarProperty Name="CODIGODIRECCION" ColumnName="CODIGODIRECCION" />
+          <ScalarProperty Name="TIPOVIA" ColumnName="TIPOVIA" />
+          <ScalarProperty Name="NOMBREVIA" ColumnName="NOMBREVIA" />
+          <ScalarProperty Name="NUMEROPORTAL" ColumnName="NUMEROPORTAL" />
+          <ScalarProperty Name="NUMEROPISO" ColumnName="NUMEROPISO" />
+          <ScalarProperty Name="LETRAPISO" ColumnName="LETRAPISO" />
+          <ScalarProperty Name="OTROSPISO" ColumnName="OTROSPISO" />
+          <ScalarProperty Name="CODIGOPOSTAL" ColumnName="CODIGOPOSTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURACION">
+      <EntityTypeMapping TypeName="DreamsBedModel.FACTURACION">
+        <MappingFragment StoreEntitySet="FACTURACION">
+          <ScalarProperty Name="CODIGOFACTURACION" ColumnName="CODIGOFACTURACION" />
+          <ScalarProperty Name="TIPOVIA" ColumnName="TIPOVIA" />
+          <ScalarProperty Name="NOMBREVIA" ColumnName="NOMBREVIA" />
+          <ScalarProperty Name="NUMEROPORTAL" ColumnName="NUMEROPORTAL" />
+          <ScalarProperty Name="NUMEROPISO" ColumnName="NUMEROPISO" />
+          <ScalarProperty Name="LETRAPISO" ColumnName="LETRAPISO" />
+          <ScalarProperty Name="OTROSPISO" ColumnName="OTROSPISO" />
+          <ScalarProperty Name="CODIGOPOSTAL" ColumnName="CODIGOPOSTAL" />
+          <ScalarProperty Name="NOMBREEMPRESA" ColumnName="NOMBREEMPRESA" />
+          <ScalarProperty Name="CIFEMPRESA" ColumnName="CIFEMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO">
+      <EntityTypeMapping TypeName="DreamsBedModel.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="CODIGOPRODUCTO" ColumnName="CODIGOPRODUCTO" />
+          <ScalarProperty Name="NOMBREPRODUCTO" ColumnName="NOMBREPRODUCTO" />
+          <ScalarProperty Name="DESCRIPCIONPRODUCTO" ColumnName="DESCRIPCIONPRODUCTO" />
+          <ScalarProperty Name="PRECIOPRODUCTO" ColumnName="PRECIOPRODUCTO" />
+          <ScalarProperty Name="STOCKPRODUCTO" ColumnName="STOCKPRODUCTO" />
+          <ScalarProperty Name="COLORPRODUCTO" ColumnName="COLORPRODUCTO" />
+          <ScalarProperty Name="ALTURAPRODUCTO" ColumnName="ALTURAPRODUCTO" />
+          <ScalarProperty Name="LARGOPRODUCTO" ColumnName="LARGOPRODUCTO" />
+          <ScalarProperty Name="ANCHOPRODUCTO" ColumnName="ANCHOPRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TARJETA">
+      <EntityTypeMapping TypeName="DreamsBedModel.TARJETA">
+        <MappingFragment StoreEntitySet="TARJETA">
+          <ScalarProperty Name="CODIGOTARJETA" ColumnName="CODIGOTARJETA" />
+          <ScalarProperty Name="NUMEROTARJETA" ColumnName="NUMEROTARJETA" />
+          <ScalarProperty Name="FXCADUCIDADTARJETA" ColumnName="FXCADUCIDADTARJETA" />
+          <ScalarProperty Name="CVCTARJETA" ColumnName="CVCTARJETA" />
+          <ScalarProperty Name="TIPOTARJETA" ColumnName="TIPOTARJETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="DreamsBedModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="CODIGOUSUARIO" ColumnName="CODIGOUSUARIO" />
+          <ScalarProperty Name="CORREOUSUARIO" ColumnName="CORREOUSUARIO" />
+          <ScalarProperty Name="PASSWORDUSUARIO" ColumnName="PASSWORDUSUARIO" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="APELLIDOSUSUARIO" ColumnName="APELLIDOSUSUARIO" />
+          <ScalarProperty Name="FXNACIMIENTO" ColumnName="FXNACIMIENTO" />
+          <ScalarProperty Name="DNIUSUARIO" ColumnName="DNIUSUARIO" />
+          <ScalarProperty Name="CODIGOFACTURACION" ColumnName="CODIGOFACTURACION" />
+          <ScalarProperty Name="CODIGODIRECCION" ColumnName="CODIGODIRECCION" />
+          <ScalarProperty Name="FOTOUSUARIO" ColumnName="FOTOUSUARIO" />
+          <ScalarProperty Name="CODIGOTARJETA" ColumnName="CODIGOTARJETA" />
+          <ScalarProperty Name="TELEFONOUSUARIO" ColumnName="TELEFONOUSUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
